@@ -1,0 +1,134 @@
+.panel{
+	border: 1px solid #dedede;
+	border-radius: 5px;
+	margin: 30px 0;
+	background: #fff;
+}
+.panel-header{
+	padding: 10px 20px;
+	border-bottom: 1px solid #dedede;
+	display: flex;
+	align-items: center;
+}
+.panel-footer{
+	padding: 12px 20px;
+	border-collapse: collapse;
+	border-top: 1px solid #dedede;
+}
+.panel-header i{
+	margin-left: 10px;
+	color: #1d095e;
+}
+.pregunta{
+	border:none;
+	font-family: 'Oswald', sans-serif;
+	font-size: 22px;
+	width: 100%;
+}
+.pregunta:focus, .opcion:focus{
+	outline: none;
+	border:none;
+}
+.fila-opcion{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 10px 20px;
+	border-bottom: 1px solid #e5e5e5;
+	border-collapse: collapse;
+}
+.fila-opcion:last-of-type{
+	border-bottom: none;
+}
+.op-progress{
+	width: 100%;
+}
+.fila-opcion i{
+	color: #1d095e;
+	margin: 0;
+	padding: 0;
+}
+.fila-opcion p{
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.opcion{
+	border:none;
+	font-size: 20px;
+}
+.opcion-elegida{
+	background: rgba(144,3,250,.3);
+}
+.fila-mas{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	border-top: 1px solid #dedede;
+	
+}
+.fila-mas i{
+	color: #403a54;
+}
+.link{
+	padding: 20px;
+	background: rgba(144,3,250,.3);
+}
+
+.fila-opcion input{
+	width: 100%;
+}
+
+.content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.content-input{
+	position: relative;
+	height: 30px;
+	width: 30px;
+	display: block;
+}
+.content-input input{
+	visibility: hidden;
+	position: absolute;
+}
+
+
+.content-input input + i{
+	background: #fff;
+	border: 2px solid #403a54;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.content-input input[type=radio] + i{
+	height: 30px;
+	width: 30px;
+}
+.content-input input[type=radio] + i:before{
+	content: '';
+	display: block;
+	border-radius: 3px;
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: 2px;
+	background:#403a54;
+	transition: all 0.25s ease;
+	transform: scale(0) ;
+	opacity: 0;
+}
+.content-input input[type=radio]:checked + i:before{
+	transform: scale(1);
+	opacity: 1;
+}
