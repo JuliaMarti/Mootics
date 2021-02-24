@@ -5,13 +5,14 @@ Página para crear encuestas.
 
 
 ## Sin loguearte permite:
-* crear encuestas con multiples opciones, publicas y privadas
-* buscar encuestas públicas
-* compartirlas
+* Crear encuestas con multiples opciones publicas 
+* Buscar encuestas públicas
+* Compartirlas
 
 ## Al loguearte se le agrega el poder:
-* pausar y reanudar encuestas
-* visualiar cuantos votos tuvo cada opción
-* eliminar encuestas
-* cambiar de contraseña o eliminar el usuario
+* Crear encuestas privadas
+* Pausar y reanudar encuestas
+* Visualiar cuantos votos tuvo cada opción
+* Eliminar encuestas
+* Cambiar de contraseña o eliminar el usuario
 
