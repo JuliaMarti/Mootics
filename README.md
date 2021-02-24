@@ -5,7 +5,7 @@ Página para crear encuestas.
 
 
 ## Sin loguearte permite:
-* Crear encuestas con multiples opciones publicas 
+* Crear encuestas publicas con múltiples opciones  
 * Buscar encuestas públicas
 * Compartirlas
 
