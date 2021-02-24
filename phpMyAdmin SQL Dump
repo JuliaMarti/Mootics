@@ -1,0 +1,348 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: localhost:3306
+-- Tiempo de generación: 23-02-2021 a las 01:37:55
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.23
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `id15360862_encuestas`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `encuesta`
+--
+
+CREATE TABLE `encuesta` (
+  `id` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `paused` tinyint(4) NOT NULL,
+  `public` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `encuesta`
+--
+
+INSERT INTO `encuesta` (`id`, `descripcion`, `created_by`, `created_at`, `paused`, `public`) VALUES
+('33993b680d8b1c9b', 'resultado 1', NULL, '2020-12-16 17:13:14', 0, 1),
+('380f951a651c8709', 'Privada ', 1, '2020-12-16 17:13:46', 0, 0),
+('3b7f06a245bc7320', 'asd', NULL, '2020-12-23 15:54:37', 0, 1),
+('550ad8c047fe6c53', 'asdasd', NULL, '2020-12-23 15:54:12', 0, 1),
+('815f9edb2bdbe380', 'asd', NULL, '2020-12-16 20:59:05', 0, 1),
+('9100ff6279887cec', 'Hola', 1, '2020-12-19 22:05:33', 0, 1),
+('9f9ab950699138f7', 'dasasda', NULL, '2020-12-23 15:54:51', 0, 1),
+('a0c91d03d46bead0', ' asdasdasd', 1, '2020-12-27 23:58:41', 0, 1),
+('c9de7be55a9d5fd5', 'Nano es feo', 18, '2020-12-28 00:29:46', 0, 1),
+('f5708865400873da', 'Which of these aren\'t part of The Office?', 14, '2020-12-23 15:55:35', 0, 1),
+('fe4482bed968f381', 'dsfdsfaa', NULL, '2020-12-23 15:54:29', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `opcion`
+--
+
+CREATE TABLE `opcion` (
+  `id` int(11) NOT NULL,
+  `id_encuesta` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `opcion`
+--
+
+INSERT INTO `opcion` (`id`, `id_encuesta`, `descripcion`) VALUES
+(10, 'f57d0195fb901c4b', 'asdasd'),
+(11, 'f57d0195fb901c4b', 'asdasd'),
+(12, 'd1615416f5a56115', 'mucho'),
+(13, 'd1615416f5a56115', '<3'),
+(14, '070c6155b8e2bb67', 'asd'),
+(15, '27fed6a89d76b01e', 'asd'),
+(16, '9889212447e36193', 'cacaca'),
+(17, '9889212447e36193', 'cacacac'),
+(18, '9889212447e36193', 'acacacacacacac'),
+(19, '9889212447e36193', 'cacac'),
+(22, '8b4014165520e4ca', 'Ailin'),
+(23, '8b4014165520e4ca', 'Paula'),
+(24, '5bfee6956d8656ef', '11'),
+(25, '5bfee6956d8656ef', '33'),
+(26, 'a40872343e314a7a', '123'),
+(27, 'a40872343e314a7a', '123'),
+(28, '3cd52e43c55b40b1', 'asd'),
+(29, '3cd52e43c55b40b1', 'asd'),
+(30, '28b8c9a07c967288', 'asdasd'),
+(31, '28b8c9a07c967288', 'asdasd'),
+(32, '6a2b5f7ae96dc267', 'asdasd'),
+(33, '6a2b5f7ae96dc267', 'asd'),
+(34, '16f073acb7bbb4e4', 'as'),
+(35, '46dfaf15cb988c60', 'Si'),
+(36, '46dfaf15cb988c60', 'No'),
+(37, '1a84dbf7e184d62b', 'si'),
+(38, '1a84dbf7e184d62b', 'no+no'),
+(39, 'f6b57398272f3f02', 'asdasd'),
+(40, 'caa4b9536a239acf', 'Bla'),
+(41, '511c140afbd385ed', 'asd'),
+(46, '5e0d867558ef1d50', 'asdasd'),
+(48, 'ac4cc9a567ffaaa0', 'asd'),
+(49, '0426e5f45c4611e1', 'asdasd'),
+(50, '0426e5f45c4611e1', 'asdasd'),
+(51, 'ec3d81fbcf2e208f', 'Si'),
+(52, 'ec3d81fbcf2e208f', 'No'),
+(53, '3286daf4b4c77d4c', 'asdasd'),
+(54, '4a2db737c3b8bc94', 'asdas'),
+(65, 'c95fa40e1d7c87ab', 'asd'),
+(69, '8c2062e1b89d5f71', 'Si'),
+(70, '8c2062e1b89d5f71', 'No'),
+(71, '8c2062e1b89d5f71', 'Dame más'),
+(72, '4cc8e2dc94938e3c', 'Hola'),
+(73, '4cc8e2dc94938e3c', 'asdasd'),
+(74, '4cc8e2dc94938e3c', 'asdasd'),
+(75, '4cc8e2dc94938e3c', 'asdasd'),
+(76, '4cc8e2dc94938e3c', 'rgrthytjyt'),
+(165, '3ef177d1c79d096a', 'Pene volador'),
+(166, '3ef177d1c79d096a', 'Un niño floto sobre mi y volo un auto con su rayo láser '),
+(167, '3ef177d1c79d096a', 'Es cierto lo vi con mis 18 ojos'),
+(168, '3ef177d1c79d096a', 'Claramente tiene 9'),
+(169, '5f23bc3823c8e9f0', 'Instagram'),
+(170, '5f23bc3823c8e9f0', 'Reddit'),
+(171, '5f23bc3823c8e9f0', 'Twitter'),
+(174, '4169bee01cf434fd', 'Si'),
+(175, '4169bee01cf434fd', 'No'),
+(180, '1d8d5dd28ab2fa03', 'sdfg'),
+(181, '1d8d5dd28ab2fa03', 'sdfg'),
+(182, '9e7a789e92922af7', 'reserse'),
+(183, '6e9398d472151a0c', 'asd'),
+(192, '092e8384ce9ab10c', 'asd'),
+(193, '33993b680d8b1c9b', 'asd'),
+(194, '33993b680d8b1c9b', 'asd'),
+(195, '33993b680d8b1c9b', 'asd'),
+(196, '380f951a651c8709', 'asd'),
+(197, '380f951a651c8709', 'asd'),
+(198, '380f951a651c8709', 'asd'),
+(205, '815f9edb2bdbe380', 'asd'),
+(206, '815f9edb2bdbe380', 'asd'),
+(207, '815f9edb2bdbe380', 'asd'),
+(208, '815f9edb2bdbe380', 'asd'),
+(209, '815f9edb2bdbe380', 'asd'),
+(210, '815f9edb2bdbe380', 'asd'),
+(211, '815f9edb2bdbe380', 'asd'),
+(212, '815f9edb2bdbe380', 'asd'),
+(213, '815f9edb2bdbe380', 'asd'),
+(214, '815f9edb2bdbe380', 'asd'),
+(215, '9100ff6279887cec', 'asd'),
+(216, '9100ff6279887cec', 'asd'),
+(217, '550ad8c047fe6c53', 'asda'),
+(218, '550ad8c047fe6c53', 'asd'),
+(219, 'fe4482bed968f381', 'a'),
+(220, 'fe4482bed968f381', 'sad'),
+(221, '3b7f06a245bc7320', 'asd'),
+(222, '9f9ab950699138f7', 'asd'),
+(223, '9f9ab950699138f7', 'asd'),
+(224, 'f5708865400873da', 'Dwight Schrute'),
+(225, 'f5708865400873da', 'Michael Scott'),
+(226, 'f5708865400873da', 'Angela Beesly'),
+(227, 'f5708865400873da', 'Jim Halpert'),
+(228, 'a0c91d03d46bead0', 'asd'),
+(229, 'a0c91d03d46bead0', 'a'),
+(230, 'a0c91d03d46bead0', 'sd'),
+(231, 'a0c91d03d46bead0', 'asd'),
+(232, 'a0c91d03d46bead0', 'asd'),
+(233, 'a0c91d03d46bead0', 'asd'),
+(234, 'a0c91d03d46bead0', 'sd'),
+(235, 'a0c91d03d46bead0', 'asd'),
+(236, 'a0c91d03d46bead0', 'ads'),
+(237, 'a0c91d03d46bead0', 'asd'),
+(238, 'c9de7be55a9d5fd5', 'Si '),
+(239, 'c9de7be55a9d5fd5', 'Yes'),
+(240, 'c9de7be55a9d5fd5', 'Oui'),
+(241, 'c9de7be55a9d5fd5', 'Asi es'),
+(242, 'c9de7be55a9d5fd5', 'Correcto');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `user` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `user`, `email`, `password`) VALUES
+(1, 'Gbito', 'bernardogabito@gmail.com', 'e5a55af4d0911ebd7b964e323126e01dbfd269e1'),
+(4, 'test', 'testuser@testmail.com', '7288edd0fc3ffcbe93a0cf06e3568e28521687bc'),
+(6, 'Uvita', 'juulimarti@gmail.com', '0230a52bb8f593c9feaa9b7a2903152cfe046490'),
+(7, 'Mica.e.muzzu', 'micaela.muzzupappa99@hotmail.com', '7678d190efad653b19ada22b4d053fd0fa3c49b2'),
+(8, 'gabitolindo', 'gabitolindo@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b'),
+(10, 'test100', 'test100@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b'),
+(11, 'Gabo', 'tagarnon@yahoo.com', 'c9b99050e7f887e7a02f9a57fd663f90b8227d8b'),
+(12, 'Kevorki', 'joaquinkevorkian@gmail.com', 'fdb503e37757459ae107ce0cb057b6a153811352'),
+(13, 'Gbiton', 'gbito42340115@gmail.com', 'e5a55af4d0911ebd7b964e323126e01dbfd269e1'),
+(14, 'gavitogavito', 'joaquinalaguive@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d'),
+(15, 'alejandro', 'alumnoaulavirtual2020@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(17, 'pepe', 'pepe@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(18, 'Cacapopo', 'franferbsas@gmail.com', 'f14a38b35a4656ea2a26649cc88fcac020d9db2d'),
+(19, 'hola', 'hola@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `voto`
+--
+
+CREATE TABLE `voto` (
+  `id_opcion` int(11) NOT NULL,
+  `ip` varbinary(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `voto`
+--
+
+INSERT INTO `voto` (`id_opcion`, `ip`) VALUES
+(10, 0x3238303339383030413039353934454537303030433935323338373935363435),
+(17, 0x3238303339383030413039353934454537303030433935323338373935363435),
+(22, 0x3238303339383030413039353934454542433536453037304130383337394242),
+(22, 0x3238303339383030413039353934454545344133443237434439463441384141),
+(23, 0x3238303030383130303437333835393630383531363337434630323641434132),
+(23, 0x3238303030383130303437333835393636393439463635424138373136413433),
+(23, 0x3238303339383030413039353934454545433438333334424336363238354333),
+(26, 0x4339443442334142),
+(29, 0x4339443442334142),
+(30, 0x4339443442334142),
+(32, 0x4339443442334142),
+(35, 0x3238303339383030413039353934454542394233393036463933363641383242),
+(36, 0x4241383844354132),
+(37, 0x4245433338433636),
+(38, 0x3238303339383030413039353934454542394233393036463933363641383242),
+(39, 0x4339443442334142),
+(41, 0x4339443442334142),
+(48, 0x4339443442334142),
+(49, 0x4339443442334142),
+(51, 0x4339443442334142),
+(53, 0x4339443442334142),
+(71, 0x3238303339383030413039353934454535443337424632383234344444363839),
+(72, 0x3238303339383030413039353934454537433436323137384131323638313235),
+(165, 0x3238303339383030413039353934454536393842364132324334374145464132),
+(165, 0x3238303339383030413039353934454539354239433430393336364637453636),
+(165, 0x4241384643413233),
+(167, 0x3238303339383030413039353934454530384545453533344137303933313737),
+(168, 0x4235413937423643),
+(169, 0x3238303339383030413039353934454530384545453533344137303933313737),
+(170, 0x4241394435313232),
+(174, 0x3238303339383030413039353934454537384433313544334130394642333234),
+(174, 0x4235303939333830),
+(174, 0x4245463541324335),
+(175, 0x4339443442334142),
+(181, 0x4339443442334142),
+(182, 0x3238303339383030413039353934454537384433313544334130394642333234),
+(193, 0x3238303339383030413039353934454535433345393646413434393238364534),
+(195, 0x3238303339383030413039353934454538343042464445343335383243343442),
+(195, 0x3238303339383030413039353934454541433843384132453133463338434543),
+(197, 0x3238303339383030413039353934454538343042464445343335383243343442),
+(209, 0x3238303339383030413039353934454535433345393646413434393238364534),
+(210, 0x3238303339383030413039353934454538343042464445343335383243343442),
+(212, 0x3238303339383030413039353934454532394338353531463530354431414641),
+(215, 0x3238303339383030413039353934454545384235433245414341423538384233),
+(217, 0x3238303339383030413039353934454534304630324436323936303635303032),
+(223, 0x3238303339383030413039353934454534304630324436323936303635303032),
+(225, 0x4241374131303330),
+(226, 0x3238303030383130303533383841303132443442303939424634354338383542),
+(226, 0x3238303339383030413039353934454533343145433237323036374336464436),
+(227, 0x3238303339383030413039353934454533394143343041303530363235323330),
+(241, 0x3238303339383030413039353934454533394143343041303530363235323330),
+(241, 0x3238303339383030413039353934454543353838343045323442443437453046);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `encuesta`
+--
+ALTER TABLE `encuesta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `opcion`
+--
+ALTER TABLE `opcion`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `opcion_ibfk_1` (`id_encuesta`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user` (`user`);
+
+--
+-- Indices de la tabla `voto`
+--
+ALTER TABLE `voto`
+  ADD PRIMARY KEY (`id_opcion`,`ip`),
+  ADD KEY `id_opcion` (`id_opcion`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `opcion`
+--
+ALTER TABLE `opcion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `opcion`
+--
+ALTER TABLE `opcion`
+  ADD CONSTRAINT `opcion_ibfk_1` FOREIGN KEY (`id_encuesta`) REFERENCES `encuesta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `voto`
+--
+ALTER TABLE `voto`
+  ADD CONSTRAINT `voto_ibfk_1` FOREIGN KEY (`id_opcion`) REFERENCES `opcion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
